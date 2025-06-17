@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handmade Saree Store</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<header>
+  <h1>Handmade Saree Store</h1>
+  <nav>
+    <!--<button onclick="showSection('signup')">create account</button>
+    <button onclick="showSection('login')">login</button>
+    <button onclick="showSection('shop')">Shop Sarees</button>-->
+    <button onclick="showSection('cart')">Cart (<span id="cart-count">0</span>)</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Sign Up Section -->
+
+  <section id="signup" class="section">
+    <h2>Create Account</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="createAccount()">Sign Up</button>
+    <p id="signup-msg"></p>
+    <div id="show"></div>
+      <p>Already registered? <button onclick="showSection('login')">login</button></p>
+  </section>
+  
+
+  <section id="login" class="section hidden">
+    <h1> Login</h1>
+    <!--<input type="email" id="email" placeholder="Email" required><br>-->
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button onclick="login()">Login</button>
+    <div id="display"></div>
+    <p>Don't have an account? <button onclick="showSection('signup')">create account</button></p>
+
+  </section>
+  
+
+  <!-- Shop Section -->
+  
+    <section id="shop" class="section hidden">
+    <h2>Browse Sarees by Category</h2>
+    <div id="categories">
+      <button onclick="filterCategory('Cotton')">Cotton</button>
+      <button onclick="filterCategory('Silk')">Silk</button>
+      <button onclick="filterCategory('Linen')">Linen</button>
+    </div>
+    <div id="products"></div>
+  </section>
+
+
+  <!-- Cart Section -->
+  <section id="cart" class="section hidden">
+    <h2>Your Cart</h2>
+    <list id="cart-items"></list>
+    <button onclick="placeOrder()">Place Order</button>
+    <p id="order-msg"></p>
+    <button onclick="showSection('shop')">shop sarees</button>
+
+  </section>
+ 
+</main>
+
+<script src="script2.js"></script>
+</body>
+</html>
